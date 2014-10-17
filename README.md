@@ -3,7 +3,7 @@
 Scans a target host (domain or IP) to see if it accepts SSL connections with the SSLv3 protocol.
 
 ## System Requirements
-* Python 2
+* Python (2 or 3)
 * An SSL library that supports SSLv3
 
 ## Basic Usage

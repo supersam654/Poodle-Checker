@@ -89,7 +89,7 @@ def main():
     timeout = args.timeout
     ports = get_services(args.ports)
 
-    for service_name, port in ports.iteritems():
+    for service_name, port in iter(ports.items()):
         result = test_server(hostname, port, ssl.PROTOCOL_SSLv3, timeout)
         if result == Responses.ACCEPT:
             result_str = "**WARNING** CONNECTION ACCEPTED"
@@ -100,7 +100,7 @@ def main():
                 continue
             else:
                 result_str = "No Answer"
-        print "%s (%d): %s" % (service_name, port, result_str)
+        print("%s (%d): %s" % (service_name, port, result_str))
 
 if __name__ == "__main__":
     main()
